@@ -971,4 +971,4 @@ C:\projetos\Reclamações\obj\Debug\net10.0\refint\Projeto_Net.dll
 C:\projetos\Reclamações\obj\Debug\net10.0\Projeto_Net.pdb
 C:\projetos\Reclamações\obj\Debug\net10.0\Projeto_Net.genruntimeconfig.cache
 C:\projetos\Reclamações\obj\Debug\net10.0\ref\Projeto_Net.dll
-C:\projetos\Reclamações\obj\Debug\net10.0\compressed\ie2z18985t-{0}-b0ibrq3ciu-b0ibrq3ciu.gz
+C:\projetos\Reclamações\obj\Debug\net10.0\compressed\ie2z18985t-{0}-yxxpye1c90-yxxpye1c90.gz
