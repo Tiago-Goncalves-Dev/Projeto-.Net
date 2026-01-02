@@ -1,0 +1,88 @@
+@page
+@model Projeto_Net.Pages_Reclamacoes_Admin.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Reclamacao</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Reclamacao.ReclamacaoID" />
+            <div class="form-group">
+<span class="text-danger">*</span>
+                <label asp-for="Reclamacao.Assunto" class="control-label"></label>
+                <input asp-for="Reclamacao.Assunto" class="form-control" aria-required="true"/>
+                <span asp-validation-for="Reclamacao.Assunto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+<span class="text-danger">*</span>
+                <label asp-for="Reclamacao.NomeConsumidor" class="control-label"></label>
+                <input asp-for="Reclamacao.NomeConsumidor" class="form-control" aria-required="true"/>
+                <span asp-validation-for="Reclamacao.NomeConsumidor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reclamacao.DataEntrada" class="control-label"></label>
+                <input asp-for="Reclamacao.DataEntrada" class="form-control" />
+                <span asp-validation-for="Reclamacao.DataEntrada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+<span class="text-danger">*</span>
+                <label asp-for="Reclamacao.TextoReclamacao" class="control-label"></label>
+                <input asp-for="Reclamacao.TextoReclamacao" class="form-control" aria-required="true"/>
+                <span asp-validation-for="Reclamacao.TextoReclamacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reclamacao.Estado" class="control-label"></label>
+                <input asp-for="Reclamacao.Estado" class="form-control" />
+                <span asp-validation-for="Reclamacao.Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reclamacao.CaminhoFicheiro" class="control-label"></label>
+                <input asp-for="Reclamacao.CaminhoFicheiro" class="form-control" />
+                <span asp-validation-for="Reclamacao.CaminhoFicheiro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reclamacao.NomeOriginalFicheiro" class="control-label"></label>
+                <input asp-for="Reclamacao.NomeOriginalFicheiro" class="form-control" />
+                <span asp-validation-for="Reclamacao.NomeOriginalFicheiro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reclamacao.DataEncerramento" class="control-label"></label>
+                <input asp-for="Reclamacao.DataEncerramento" class="form-control" />
+                <span asp-validation-for="Reclamacao.DataEncerramento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reclamacao.RespostaAdmin" class="control-label"></label>
+                <input asp-for="Reclamacao.RespostaAdmin" class="form-control" />
+                <span asp-validation-for="Reclamacao.RespostaAdmin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reclamacao.CaminhoFicheiroAdmin" class="control-label"></label>
+                <input asp-for="Reclamacao.CaminhoFicheiroAdmin" class="form-control" />
+                <span asp-validation-for="Reclamacao.CaminhoFicheiroAdmin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reclamacao.NomeOriginalFicheiroAdmin" class="control-label"></label>
+                <input asp-for="Reclamacao.NomeOriginalFicheiroAdmin" class="form-control" />
+                <span asp-validation-for="Reclamacao.NomeOriginalFicheiroAdmin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

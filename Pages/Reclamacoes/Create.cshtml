@@ -1,0 +1,80 @@
+@page
+@model Projeto_Net.Pages_Reclamacoes.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-xl-6">
+
+            <h1 class="text-center mb-5 fw-bold text-dark">CRIAR AS RECLAMAÇÕES</h1>
+
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-body p-5">
+
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-4"></div>
+
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <label asp-for="Reclamacao.Assunto" class="form-label fw-medium">
+                                    <span class="text-danger">*</span> Assunto
+                                </label>
+                                <input asp-for="Reclamacao.Assunto" class="form-control form-control-lg" placeholder="Inserir o assunto" aria-required="true" />
+                                <span asp-validation-for="Reclamacao.Assunto" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-medium">Nome do Consumidor</label>
+                                <input type="text" class="form-control form-control-lg bg-light" value="@Model.Reclamacao.NomeConsumidor" readonly />
+                                <input type="hidden" asp-for="Reclamacao.NomeConsumidor" />
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="Reclamacao.TextoReclamacao" class="form-label fw-medium">
+                                <span class="text-danger">*</span> Texto da Reclamação
+                            </label>
+                            <textarea asp-for="Reclamacao.TextoReclamacao" class="form-control" rows="8" 
+                                      placeholder="Escreva aqui a sua reclamação..." aria-required="true"></textarea>
+                            <span asp-validation-for="Reclamacao.TextoReclamacao" class="text-danger"></span>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <label asp-for="Reclamacao.DataEntrada" class="form-label fw-medium">Data Entrada</label>
+                                <input asp-for="Reclamacao.DataEntrada" class="form-control form-control-lg" />
+                                <span asp-validation-for="Reclamacao.DataEntrada" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label asp-for="Reclamacao.CaminhoFicheiro" class="form-label fw-medium">Caminho Ficheiro</label>
+                                <input asp-for="Reclamacao.CaminhoFicheiro" class="form-control form-control-lg" />
+                                <span asp-validation-for="Reclamacao.CaminhoFicheiro" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-5">
+                            <label asp-for="Reclamacao.NomeOriginalFicheiro" class="form-label fw-medium">Nome Original Ficheiro</label>
+                            <input asp-for="Reclamacao.NomeOriginalFicheiro" class="form-control form-control-lg" />
+                            <span asp-validation-for="Reclamacao.NomeOriginalFicheiro" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-flex justify-content-between flex-column flex-md-row gap-3">
+                            <a asp-page="Index" class="btn btn-outline-secondary btn-lg px-5 order-md-1">Voltar</a>
+                            <button type="submit" class="btn btn-dark btn-lg px-5 order-md-2">Criar</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

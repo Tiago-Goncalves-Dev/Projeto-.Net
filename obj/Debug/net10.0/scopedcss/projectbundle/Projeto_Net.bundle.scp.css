@@ -1,0 +1,64 @@
+/* /Pages/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-9naxg86tp8] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-9naxg86tp8] {
+  color: #0077cc;
+}
+
+.btn-primary[b-9naxg86tp8] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-9naxg86tp8], .nav-pills .show > .nav-link[b-9naxg86tp8] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-9naxg86tp8] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-9naxg86tp8] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-9naxg86tp8] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-9naxg86tp8] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+
+.footer[b-9naxg86tp8] {
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+  border-top: 1px solid #e5e5e5;
+  text-align: center;
+  margin-top: 3rem;               /* espaço acima do footer */
+  padding: 1rem 0;
+}
+
+/* GARANTE QUE O BODY E HTML TENHAM ALTURA MÍNIMA E O CONTEÚDO NÃO SOBREPONHA */
+html[b-9naxg86tp8] {
+  position: relative;
+  min-height: 100%;
+}
+
+body[b-9naxg86tp8] {
+  margin-bottom: 100px; 
+  background: linear-gradient(to right, #ffffff, #fff8e8, #ffffff);
+}
+

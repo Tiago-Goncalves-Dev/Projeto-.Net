@@ -1,0 +1,42 @@
+@page
+@model Projeto_Net.Pages_Reclamacoes.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Reclamacao.ReclamacaoID" />
+            <input type="hidden" asp-for="Reclamacao.NomeConsumidor" />
+
+            <div class="form-group">
+                <label asp-for="Reclamacao.Assunto" class="control-label"></label>
+                <input asp-for="Reclamacao.Assunto" class="form-control" />
+                <span asp-validation-for="Reclamacao.Assunto" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Reclamacao.TextoReclamacao" class="control-label"></label>
+                <textarea asp-for="Reclamacao.TextoReclamacao" class="form-control"></textarea>
+                <span asp-validation-for="Reclamacao.TextoReclamacao" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+            <div>
+                <a asp-page="Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
