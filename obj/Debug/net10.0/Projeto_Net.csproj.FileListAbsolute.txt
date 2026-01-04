@@ -958,8 +958,6 @@ C:\projetos\Reclamações\obj\Debug\net10.0\compressed\pzav2gqhh2-{0}-jjsuc0puko
 C:\projetos\Reclamações\obj\Debug\net10.0\compressed\3ruvf0ukcl-{0}-9vr69e8ynj-9vr69e8ynj.gz
 C:\projetos\Reclamações\obj\Debug\net10.0\compressed\1he2whnp8n-{0}-87fc7y1x7t-87fc7y1x7t.gz
 C:\projetos\Reclamações\obj\Debug\net10.0\compressed\3hxqbbl1vq-{0}-mlv21k5csn-mlv21k5csn.gz
-C:\projetos\Reclamações\obj\Debug\net10.0\compressed\nkmwmzkhfy-{0}-4ocy95iwn8-4ocy95iwn8.gz
-C:\projetos\Reclamações\obj\Debug\net10.0\compressed\vlfgbh4uaj-{0}-4ocy95iwn8-4ocy95iwn8.gz
 C:\projetos\Reclamações\obj\Debug\net10.0\staticwebassets.build.json
 C:\projetos\Reclamações\obj\Debug\net10.0\staticwebassets.build.json.cache
 C:\projetos\Reclamações\obj\Debug\net10.0\staticwebassets.development.json
@@ -971,4 +969,6 @@ C:\projetos\Reclamações\obj\Debug\net10.0\refint\Projeto_Net.dll
 C:\projetos\Reclamações\obj\Debug\net10.0\Projeto_Net.pdb
 C:\projetos\Reclamações\obj\Debug\net10.0\Projeto_Net.genruntimeconfig.cache
 C:\projetos\Reclamações\obj\Debug\net10.0\ref\Projeto_Net.dll
-C:\projetos\Reclamações\obj\Debug\net10.0\compressed\ie2z18985t-{0}-yxxpye1c90-yxxpye1c90.gz
+C:\projetos\Reclamações\obj\Debug\net10.0\compressed\ie2z18985t-{0}-yx6b4hb56m-yx6b4hb56m.gz
+C:\projetos\Reclamações\obj\Debug\net10.0\compressed\nkmwmzkhfy-{0}-il96tdvfd3-il96tdvfd3.gz
+C:\projetos\Reclamações\obj\Debug\net10.0\compressed\vlfgbh4uaj-{0}-il96tdvfd3-il96tdvfd3.gz

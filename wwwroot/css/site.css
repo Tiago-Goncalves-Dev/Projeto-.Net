@@ -71,6 +71,7 @@ body {
   margin-top: 1.5rem;
   display: grid;
   grid-template-columns: repeat(4,  1fr);
+  gap: 1rem;
 }
 
 .card{
@@ -114,3 +115,23 @@ body {
   height: fit-content;
   padding: .4rem .6rem;
 }
+.btn-rec a {
+  text-decoration: none;
+  color: white;
+}
+
+
+
+.logo{
+  font-weight: 700;
+}
+
+
+.border-bottom{
+  border-bottom: none !important;
+}
+
+.footer[b-9naxg86tp8]{
+  border-top: none;
+}
+

@@ -4,8 +4,10 @@
 @{
     ViewData["Title"] = "Index";
 }
+@inject SignInManager<IdentityUser> SignInManager
 
-<h1>Portal de</h1>
+@if(SignInManager.IsSignedIn(User)){
+    <h1>Portal de Recamações</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -87,3 +89,7 @@
 }
     </tbody>
 </table>
+
+}else{
+
+}

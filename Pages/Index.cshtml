@@ -3,6 +3,18 @@
 @{
     ViewData["Title"] = "Home page";
 }
+@inject SignInManager<IdentityUser> SignInManager
+
+@{
+    string redirect = "";
+}
+
+@if (SignInManager.IsSignedIn(User)){
+    redirect = "/Reclamacoes/Create";
+}
+else{
+    redirect = "/Reclamacoes/Index";
+}
 
 <div class="text-center">
     <h1 class="display-4 prod-text">Faça a sua reclamação sobre os nossos produtos</h1>
@@ -17,7 +29,7 @@
                 <h4>Nike Space walker</h4>
                 <p>19,99€</p>
             </div>
-            <button class="btn-rec">Reclamar</button>
+            <button class="btn-rec"><a asp-page=@redirect>Reclamar</a></button>
         </div>
     </div>
     <div class="card">
@@ -27,7 +39,7 @@
                 <h4>Nike Space walker</h4>
                 <p>19,99€</p>
             </div>
-            <button class="btn-rec">Reclamar</button>
+            <button class="btn-rec"><a asp-page=@redirect>Reclamar</a></button>
         </div>
     </div>
     <div class="card">
@@ -37,7 +49,7 @@
                 <h4>Nike Space walker</h4>
                 <p>19,99€</p>
             </div>
-            <button class="btn-rec">Reclamar</button>
+            <button class="btn-rec"><a asp-page=@redirect>Reclamar</a></button>
         </div>
     </div>
     <div class="card">
@@ -47,7 +59,47 @@
                 <h4>Nike Space walker</h4>
                 <p>19,99€</p>
             </div>
-            <button class="btn-rec">Reclamar</button>
+            <button class="btn-rec"><a asp-page=@redirect>Reclamar</a></button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=812&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="nike shoes">
+        <div class="prod">
+            <div class="desc-prod">
+                <h4>Nike Space walker</h4>
+                <p>19,99€</p>
+            </div>
+            <button class="btn-rec"><a asp-page=@redirect>Reclamar</a></button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1598528738936-c50861cc75a9?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="nike shoes">
+        <div class="prod">
+            <div class="desc-prod">
+                <h4>Hidro Walker</h4>
+                <p>19,99€</p>
+            </div>
+            <button class="btn-rec"><a asp-page=@redirect>Reclamar</a></button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1648688135643-2716ec8f4b24?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="nike shoes">
+        <div class="prod">
+            <div class="desc-prod">
+                <h4>Sun Glasses</h4>
+                <p>19,99€</p>
+            </div>
+            <button class="btn-rec"><a asp-page=@redirect>Reclamar</a></button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1711060001575-2cfa3c5a2bfa?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="nike shoes">
+        <div class="prod">
+            <div class="desc-prod">
+                <h4>Bath Solution</h4>
+                <p>19,99€</p>
+            </div>
+            <button class="btn-rec"><a asp-page=@redirect>Reclamar</a></button>
         </div>
     </div>
 </div>

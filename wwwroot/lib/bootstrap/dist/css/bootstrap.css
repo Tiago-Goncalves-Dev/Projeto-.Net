@@ -7526,9 +7526,9 @@ textarea.form-control-lg {
   border-right: 0 !important;
 }
 
-.border-bottom {
+/* .border-bottom {
   border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
-}
+} */
 
 .border-bottom-0 {
   border-bottom: 0 !important;
