@@ -1,99 +1,118 @@
 @page
 @model Projeto_Net.Pages_Reclamacoes.IndexModel
-
-@{
-    ViewData["Title"] = "Index";
-}
 @inject SignInManager<IdentityUser> SignInManager
 
-@if(SignInManager.IsSignedIn(User)){
-    <h1>Portal de Recamações</h1>
-
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Reclamacao[0].Assunto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Reclamacao[0].NomeConsumidor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Reclamacao[0].DataEntrada)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Reclamacao[0].TextoReclamacao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Reclamacao[0].Estado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Reclamacao[0].CaminhoFicheiro)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Reclamacao[0].NomeOriginalFicheiro)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Reclamacao[0].DataEncerramento)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Reclamacao[0].RespostaAdmin)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Reclamacao) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Assunto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeConsumidor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataEntrada)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TextoReclamacao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Estado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CaminhoFicheiro)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeOriginalFicheiro)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataEncerramento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RespostaAdmin)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CaminhoFicheiroAdmin)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeOriginalFicheiroAdmin)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ReclamacaoID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ReclamacaoID">Details</a> |
-            </td>
-        </tr>
+@{
+    ViewData["Title"] = "Portal de Reclamações";
 }
-    </tbody>
-</table>
 
-}else{
-        <div class="content">
-            <h1>Bem Vindo ao </h1>
-            <h4>PORTAL  DE GESTÃO DAS RECLAMAÇÕES</h4>
-            <p>Faça login para ver ou fazer as suas novas reclamações <a asp-area="Identity" asp-page="/Account/Login">Login</a></p>
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="container py-5">
+        <h1 class="mb-4">Portal de Reclamações</h1>
+
+        <p>
+            <a asp-page="Create" class="btn btn-dark shadow-lg rounded mb-3">Criar Nova Reclamação</a>
+        </p>
+
+        <div class="table-responsive shadow-sm rounded-3 mb-4">
+            <table class="table table-hover table-borderless align-middle"
+                style="border-collapse: separate; border-spacing: 0 0.5rem;">
+                <thead class="table-dark rounded-3">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Reclamacao[0].Assunto)</th>
+                        <th>@Html.DisplayNameFor(model => model.Reclamacao[0].NomeConsumidor)</th>
+                        <th>@Html.DisplayNameFor(model => model.Reclamacao[0].DataEntrada)</th>
+                        <th>@Html.DisplayNameFor(model => model.Reclamacao[0].TextoReclamacao)</th>
+                        <th>@Html.DisplayNameFor(model => model.Reclamacao[0].Estado)</th>
+                        <th>@Html.DisplayNameFor(model => model.Reclamacao[0].NomeOriginalFicheiro)</th>
+                        <th>@Html.DisplayNameFor(model => model.Reclamacao[0].DataEncerramento)</th>
+                        <th>@Html.DisplayNameFor(model => model.Reclamacao[0].RespostaAdmin)</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Reclamacao)
+                    {
+                        <tr class="bg-white shadow-sm rounded">
+                            <td>@Html.DisplayFor(modelItem => item.Assunto)</td>
+                            <td>@Html.DisplayFor(modelItem => item.NomeConsumidor)</td>
+                            <td>@Html.DisplayFor(modelItem => item.DataEntrada)</td>
+                            <td>@Html.DisplayFor(modelItem => item.TextoReclamacao)</td>
+                            @if (item.Estado == "Aberta")
+                            {
+                                <td class="bg-danger text-white fw-semibold">
+                                    @item.Estado
+                                </td>
+                            }
+                            else if (item.Estado == "Fechada")
+                            {
+                                <td class="bg-success text-white fw-semibold">
+                                    @item.Estado
+                                </td>
+                            }
+                            else if (item.Estado == "Pendente")
+                            {
+                                <td class="bg-warning text-dark fw-semibold">
+                                    @item.Estado
+                                </td>
+                            }
+                            else
+                            {
+                                <td>
+                                    @item.Estado
+                                </td>
+                            }
+                            <td>
+                                @if (!string.IsNullOrEmpty(item.CaminhoFicheiro))
+                                {
+                                    <span class="me-2">
+                                        @item.NomeOriginalFicheiro
+                                    </span>
+
+                                    <a href="@item.CaminhoFicheiro" target="_blank" class="btn btn-sm btn-outline-dark"
+                                        title="Abrir anexo">
+                                        <i class="bi bi-paperclip"></i>
+                                    </a>
+
+                                    <a href="@item.CaminhoFicheiro" download class="btn btn-sm btn-outline-success ms-1"
+                                        title="Download">
+                                        <i class="bi bi-download"></i>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">—</span>
+                                }
+                            </td>
+
+                            <td>@Html.DisplayFor(modelItem => item.DataEncerramento)</td>
+                            <td>@Html.DisplayFor(modelItem => item.RespostaAdmin)</td>
+                            <td>
+                                <a asp-page="./Edit" asp-route-id="@item.ReclamacaoID"
+                                    class="btn btn-sm btn-light shadow-sm rounded me-1" title="Editar">
+                                    <i class="bi bi-pencil-fill text-dark"></i>
+                                </a>
+                                <a asp-page="./Details" asp-route-id="@item.ReclamacaoID"
+                                    class="btn btn-sm btn-light shadow-sm rounded" title="Detalhes">
+                                    <i class="bi bi-info-circle-fill text-primary"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
         </div>
+    </div>
+}
+else
+{
+    <div class="container text-center mt-5">
+        <h1>Bem-vindo ao</h1>
+        <h4>PORTAL DE GESTÃO DAS RECLAMAÇÕES</h4>
+        <p>
+            Faça login para ver ou criar novas reclamações:
+            <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-primary ms-2">Login</a>
+        </p>
+    </div>
 }
