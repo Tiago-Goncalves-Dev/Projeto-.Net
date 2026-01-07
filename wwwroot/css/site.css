@@ -53,7 +53,7 @@ body {
 
 
 #search{
-  margin-top: 1rem;
+  margin-bottom: 1rem;
   border-radius: .4rem;
   border: none;
   width: 50%;
@@ -64,6 +64,7 @@ body {
 
 .prod-text{
   font-weight: 600;
+  margin-block: 4rem;
 }
 
 
@@ -156,9 +157,86 @@ body {
   border: .06rem solid black;
 }
 
+.logOut-btn{
+  margin-left: 1rem;
+  border-radius: 4rem;
+  height: fit-content;
+  background-color: white;
+  font-weight: 500;
+  padding: .1rem .6rem;
+  box-shadow: black -5px 3px 0;
+  border: .06rem solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .login-btn a img {
   margin-left: .5rem;
 }
+.logOut-btn img {
+  margin-left: .5rem;
+}
+
+.logOut-btn button:active{
+  outline: none;
+  border: 0;
+}
+
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem; /* espaço entre os links */
+}
+
+.navbar-nav .nav-item .nav-link {
+    text-align: center;
+}
+
+
+/* Container principal da navbar */
+.navbar-custom {
+    background: linear-gradient(to right, #F4F0E2, #F8E9B7, #F4F4F4);
+    padding: 0.5rem 2rem;
+}
+
+/* Flex container do header */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* logo esquerda, login direita */
+    max-width: 1200px; /* opcional, centraliza na tela */
+    margin: 0 auto;
+}
+
+/* Logo */
+
+
+/* Menu central */
+.nav-menu {
+    display: flex;
+    gap: 2rem;          /* espaço entre os links */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+
+/* Login à direita */
+.login-partial {
+    display: flex;
+    align-items: center;
+}
+
+
 
 
 @media (max-width: 768px) {
@@ -170,6 +248,16 @@ body {
   gap: 1rem;
   place-items: center;
 }
+
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .nav-menu {
+       display: none;
+    }
 }
 
 

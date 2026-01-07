@@ -13,39 +13,34 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3 navbar-custom">
-            <div class="container nav-cont">
-                <a class="navbar-brand logo" asp-area="" asp-page="/Index"><img src="~/imagens/logo.svg" alt="" srcset=""></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<header>
+    <nav class="navbar-custom">
+        <div class="nav-container">
+            <!-- Logo à esquerda -->
+            <a class="logo" asp-area="" asp-page="/Index">
+                <img src="~/imagens/logo.svg" alt="Logo" />
+            </a>
 
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        @if(User.Identity?.IsAuthenticated == true && User.IsInRole("Admin")){
-                            <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Products/Index">Produtos</a>
-                        </li>
-                        }
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Reclamacoes/Index">Reclamacoes</a>
-                        </li>
+            <!-- Menu central -->
+            <ul class="nav-menu">
+                @if(User.Identity?.IsAuthenticated == true && User.IsInRole("Admin")){
+                    <li><a asp-area="" asp-page="/Products/Index">Produtos</a></li>
+                }
+                <li><a asp-area="" asp-page="/Reclamacoes/Index">Reclamações</a></li>
+                @if (User.Identity?.IsAuthenticated == true && User.IsInRole("Admin"))
+                {
+                    <li><a asp-area="" asp-page="/Reclamacoes_Admin/Index">Dashboard</a></li>
+                }
+            </ul>
 
-                        @if (User.Identity?.IsAuthenticated == true && User.IsInRole("Admin"))
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Reclamacoes_Admin/Index">Dashboard</a>
-                            </li>
-                        }
-                    </ul>
-
-                    <partial name="_LoginPartial" />
-                </div>
+            <!-- Login à direita -->
+            <div class="login-partial">
+                <partial name="_LoginPartial" />
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
+
 
     <div class="container">
         <main role="main" class="pb-3">

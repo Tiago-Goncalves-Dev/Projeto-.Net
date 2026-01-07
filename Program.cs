@@ -6,6 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 using RazorPagesProducts.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+var conn = builder.Configuration.GetConnectionString("DefaultConnection");
+Console.WriteLine($"DB: {conn}");
+
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
@@ -24,7 +27,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<RazorPagesProductsContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("RazorPagesProductsContext") ?? throw new InvalidOperationException("Connection string 'RazorPagesProductsContext' not found.")));
+    options.UseSqlite(connectionString));
 
 var app = builder.Build();
 
