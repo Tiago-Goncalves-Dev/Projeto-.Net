@@ -146,6 +146,21 @@ body {
 }
 
 
+.login-btn{
+  border-radius: 4rem;
+  height: fit-content;
+  background-color: white;
+  font-weight: 500;
+  padding: .1rem .6rem;
+  box-shadow: black -5px 3px 0;
+  border: .06rem solid black;
+}
+
+.login-btn a img {
+  margin-left: .5rem;
+}
+
+
 @media (max-width: 768px) {
   html {
     font-size: 16px;
@@ -156,3 +171,5 @@ body {
   place-items: center;
 }
 }
+
+

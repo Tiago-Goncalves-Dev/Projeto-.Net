@@ -37,3 +37,9 @@ Alterados Bits and pieces no projeto para ficar mais realista tais como.
     - Filtragem de vizualização de pedidos por e-mail (os users só podem ver os seus pedidos)
     - etc
 
+
+## New Features Adionados
+
+- Admin agora pode adiconar produtos ou remover 
+- Imagem de User e logo da App adicionadas no projeto exportadas do Figma como SVG
+- 
