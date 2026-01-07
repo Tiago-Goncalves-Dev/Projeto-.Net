@@ -4,37 +4,10 @@
 @{
     ViewData["Title"] = "Home page";
 }
-@inject SignInManager<IdentityUser> SignInManager
 
 
-@if(SignInManager.IsSignedIn(User) == true && User.IsInRole("Admin")){
-    <div class="text-center">
-    <h1 class="display-4 prod-text">PORTAL  DE GESTÃO DAS RECLAMAÇÕES</h1>
-    <input type="search" name="" id="search" placeholder="Pesquise o seu produto">
-    <div class="cards">
-             <p>Total de Reclamações: @Model.Reclamacoes.Count
-        </p>
-    @foreach (var Reclamacao in Model.Reclamacoes)
-    {
-        <div class="card">
-            @* <img src="@(string.IsNullOrEmpty(product.ImagePath) ? "/images/no-image.png" : product.ImagePath)" alt="@product.NomeDoProduto" /> *@
-   
-            <div class="prod">
-                <div class="desc-prod">
-                    <h4>@Reclamacao.Assunto</h4>
-                    <p>@Reclamacao.NomeConsumidor</p>
-                </div>
-                <p>@Reclamacao.TextoReclamacao</p>
-                <button class="btn-rec">
-                    <a asp-page="@Model.RedirectPage">Responder reclamação</a>
-                </button>
-            </div>
-        </div>
-    }
-</div>
-</div>
 
-}else{
+
     <div class="text-center">
     <h1 class="display-4 prod-text">Faça a sua reclamação sobre os nossos produtos</h1>
     <input type="search" name="" id="search" placeholder="Pesquise o seu produto">
@@ -60,7 +33,7 @@
         </div>
     }
 </div>
-}
+
 
 
 
