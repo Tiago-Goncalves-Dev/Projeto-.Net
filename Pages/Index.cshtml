@@ -5,23 +5,36 @@
 }
 @inject SignInManager<IdentityUser> SignInManager
 
-@{
-    string redirect = "";
-}
 
-@if (SignInManager.IsSignedIn(User)){
-    redirect = "/Reclamacoes/Create";
-}
-else{
-    redirect = "/Reclamacoes/Index";
-}
 
 <div class="text-center">
     <h1 class="display-4 prod-text">Faça a sua reclamação sobre os nossos produtos</h1>
     <input type="search" name="" id="search" placeholder="Pesquise o seu produto">
 </div>
 
+
 <div class="cards">
+    @foreach (var product in Model.Products)
+    {
+        <div class="card">
+            <img src="@(string.IsNullOrEmpty(product.ImagePath) ? "/images/no-image.png" : product.ImagePath)" alt="@product.NomeDoProduto" />
+
+            <div class="prod">
+                <div class="desc-prod">
+                    <h4>@product.NomeDoProduto</h4>
+                    <p>@product.Preco.ToString("0.00")€</p>
+                </div>
+
+                <button class="btn-rec">
+                    <a asp-page="@Model.RedirectPage">Reclamar</a>
+                </button>
+            </div>
+        </div>
+    }
+</div>
+
+
+@* <div class="cards">
     <div class="card">
         <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="nike shoes">
         <div class="prod">
@@ -102,4 +115,6 @@ else{
             <button class="btn-rec"><a asp-page=@redirect>Reclamar</a></button>
         </div>
     </div>
-</div>
+>
+    </div>
+</div> *@

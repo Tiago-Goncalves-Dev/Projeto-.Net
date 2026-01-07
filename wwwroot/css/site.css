@@ -95,6 +95,7 @@ body {
   gap: 1.6rem;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 .desc-prod {
   display: flex;
@@ -144,3 +145,14 @@ body {
   margin-top: 3rem;
 }
 
+
+@media (max-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+  .cards{
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  place-items: center;
+}
+}

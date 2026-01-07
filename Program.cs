@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Projeto_Net.Data;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.DependencyInjection;
+using RazorPagesProducts.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +23,8 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<RazorPagesProductsContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("RazorPagesProductsContext") ?? throw new InvalidOperationException("Connection string 'RazorPagesProductsContext' not found.")));
 
 var app = builder.Build();
 
