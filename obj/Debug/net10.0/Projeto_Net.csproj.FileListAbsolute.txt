@@ -410,7 +410,6 @@ C:\Users\Tiago\Desktop\Projeto_Net\obj\Debug\net10.0\compressed\a3ygkwa5zy-{0}-2
 C:\Users\Tiago\Desktop\Projeto_Net\obj\Debug\net10.0\compressed\nezrqnk58p-{0}-muycvpuwrr-muycvpuwrr.gz
 C:\Users\Tiago\Desktop\Projeto_Net\obj\Debug\net10.0\compressed\v0zgfp0y55-{0}-87fc7y1x7t-87fc7y1x7t.gz
 C:\Users\Tiago\Desktop\Projeto_Net\obj\Debug\net10.0\compressed\yfc7ypekbg-{0}-mlv21k5csn-mlv21k5csn.gz
-C:\Users\Tiago\Desktop\Projeto_Net\obj\Debug\net10.0\compressed\ie2z18985t-{0}-tfo7w5dbbf-tfo7w5dbbf.gz
 C:\Users\Tiago\Desktop\Projeto_Net\obj\Debug\net10.0\compressed\1ikuqiwsl5-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\Tiago\Desktop\Projeto_Net\obj\Debug\net10.0\compressed\ka8w6mkot4-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 C:\Users\Tiago\Desktop\Projeto_Net\obj\Debug\net10.0\compressed\1wdvryvti9-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -976,3 +975,7 @@ C:\projetos\Reclamações\obj\Debug\net10.0\compressed\ie2z18985t-{0}-6ofjytuuud
 C:\projetos\Reclamações\obj\Debug\net10.0\compressed\w9c6g6nd9s-{0}-dttrjplds4-dttrjplds4.gz
 C:\projetos\Reclamações\obj\Debug\net10.0\compressed\bbpl6wbj7s-{0}-6fx2c703bw-6fx2c703bw.gz
 C:\projetos\Reclamações\obj\Debug\net10.0\compressed\6ycn8mz0yo-{0}-gwht5gaso2-gwht5gaso2.gz
+C:\Users\Tiago\Desktop\Projeto_Net\obj\Debug\net10.0\compressed\ie2z18985t-{0}-6ofjytuuud-6ofjytuuud.gz
+C:\Users\Tiago\Desktop\Projeto_Net\obj\Debug\net10.0\compressed\w9c6g6nd9s-{0}-xi5arri7vi-xi5arri7vi.gz
+C:\Users\Tiago\Desktop\Projeto_Net\obj\Debug\net10.0\compressed\6ycn8mz0yo-{0}-sfl4yiy7wj-sfl4yiy7wj.gz
+C:\Users\Tiago\Desktop\Projeto_Net\obj\Debug\net10.0\compressed\bbpl6wbj7s-{0}-tnwa7rgu33-tnwa7rgu33.gz

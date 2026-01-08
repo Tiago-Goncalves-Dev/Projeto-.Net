@@ -4,13 +4,26 @@
 @{
     ViewData["Title"] = "Home page";
 }
-
-
-
-
-    <div class="text-center">
-    <h1 class="display-4 prod-text">Faça a sua reclamação sobre os nossos produtos</h1>
-    <input type="search" name="" id="search" placeholder="Pesquise o seu produto">
+<div class="col-auto">
+    <form method="get" class="d-inline">
+        <div class="text-center">
+            <h1 class="display-4 prod-text">Faça a sua reclamação sobre os nossos produtos</h1>
+            <div class="col-auto">
+                <input class="form-control" list="nomesList" id="searchNome" name="searchNome" value="@Model.searchNome"
+                    placeholder="Digite ou selecione...">
+                <datalist id="nomesList">
+                    @foreach (var item in Model.Products)
+                    {
+                        <option value="@item.NomeDoProduto"></option>
+                    }
+                </datalist>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-dark">Filtrar</button>
+                    <a href="/Reclamacoes_Admin/Index" class="btn btn-outline-secondary ms-2">Limpar</a>
+                </div>
+    </form>
+</div>
+</div>
 </div>
 
 
@@ -18,7 +31,8 @@
     @foreach (var product in Model.Products)
     {
         <div class="card">
-            <img src="@(string.IsNullOrEmpty(product.ImagePath) ? "/images/no-image.png" : product.ImagePath)" alt="@product.NomeDoProduto" />
+            <img src="@(string.IsNullOrEmpty(product.ImagePath) ? "/images/no-image.png" : product.ImagePath)"
+                alt="@product.NomeDoProduto" />
 
             <div class="prod">
                 <div class="desc-prod">

@@ -4,6 +4,7 @@ using RazorPagesProducts.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using GestorReclamacao;
+using RazorPagesProducts;
 
 
 namespace Projeto_Net.Pages;
@@ -12,7 +13,8 @@ public class IndexModel : PageModel
 {
     private readonly RazorPagesProductsContext _context;
     private readonly SignInManager<IdentityUser> _signInManager;
-
+    [BindProperty(SupportsGet = true)]
+    public string? searchNome { get; set; }
 
     public IndexModel(RazorPagesProductsContext context, SignInManager<IdentityUser> signInManager)
     {
@@ -23,15 +25,23 @@ public class IndexModel : PageModel
     public IList<Models.Product> Products { get; set; } = new List<Models.Product>();
     public IList<Reclamacao> Reclamacoes { get; set; } = new List<Reclamacao>();
 
-     public string RedirectPage { get; set; } = "/Reclamacoes/Index";
+    public string RedirectPage { get; set; } = "/Reclamacoes/Index";
     public async Task OnGetAsync()
     {
-        Products = await _context.Products.ToListAsync();
-        Reclamacoes = await _context.Reclamacoes.ToListAsync();
+        var query = from r in _context.Products select r;
 
         if (_signInManager.IsSignedIn(User))
         {
             RedirectPage = "/Reclamacoes/Create";
         }
+
+        if (!string.IsNullOrEmpty(searchNome))
+        {
+            query = query.Where(r =>
+                EF.Functions.Like(r.NomeDoProduto, $"%{searchNome}%"));
+        }
+
+        Products = await query.ToListAsync();
+        Reclamacoes = await _context.Reclamacoes.ToListAsync();
     }
 }

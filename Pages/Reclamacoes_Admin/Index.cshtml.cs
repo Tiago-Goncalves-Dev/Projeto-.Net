@@ -31,8 +31,7 @@ namespace Projeto_Net.Pages.Reclamacoes_Admin
 
         public async Task OnGetAsync()
         {
-            var query = from r in _context.Reclamacao
-                        select r;
+            var query = from r in _context.Reclamacao select r;
 
             if (!string.IsNullOrEmpty(searchNome))
             {
