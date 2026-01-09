@@ -7,9 +7,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Projeto_Net.Models;
 using RazorPagesProducts.Data;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace Projeto_Net.Pages_Products
 {
+    [Authorize(Roles = "Admin")] //Determina que apenas Admins podem aceder a esta página. *** Usar a conta Admin para vizualizar *** 
+
     public class IndexModel : PageModel
     {
         private readonly RazorPagesProducts.Data.RazorPagesProductsContext _context;
@@ -19,7 +23,7 @@ namespace Projeto_Net.Pages_Products
             _context = context;
         }
 
-        public IList<Product> Products { get;set; } = default!;
+        public IList<Product> Products { get; set; } = default!;
 
         public async Task OnGetAsync()
         {
